@@ -4,6 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Grid />
+    <Grid ColumnDefinitions="*" RowDefinitions="Auto,*">
+        <Button Clicked="OnSendMessageButtonClicked" Text="Send message to JavaScript" />
+        <HybridWebView
+            x:Name="hybridWebView"
+            Grid.Row="1"
+            RawMessageReceived="OnHybridWebViewRawMessageReceived" />
+    </Grid>
 
 </ContentPage>
